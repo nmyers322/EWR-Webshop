@@ -6,7 +6,6 @@
 
 <?php
 
-
 session_start();
 
 function items_sort(){
@@ -57,6 +56,7 @@ function convertCountry($code){
 		return $crow['printable_name'];
 	}
 }
+
 
 mysql_connect("localhost", "USERNAME", "PASSWORD") or die("couldnt connect");
 mysql_select_db("eternalw_eternalshop") or die("Unable to select database");
@@ -198,7 +198,7 @@ mysql_select_db("eternalw_eternalshop") or die("Unable to select database");
 		break;
 
 		case 'return';
-		echo "Your order was successfully placed. Thanks for your support."
+		echo "Your order was successfully placed. Thanks for your support.";
 		break;
 
 		case 'catalog';

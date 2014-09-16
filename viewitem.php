@@ -19,10 +19,10 @@ while($row = mysql_fetch_array($numresults)) {
 	echo "</b></font></div>";
 	echo "<table border=0 cellpadding=3 cellspacing=3 border=0 width=100%>\n";
 	echo "<tr><td align=center valign=center><a href=\"#\" onClick=\"javascript:window.open('";
-	echo "images/".$row["picture"].".jpg" . "', 'View larger image', 'resizable=yes, toolbar=no, location=no, ";
-	echo "directories=no, menubar=yes, status=no')\"><img src=\"thumbs/images/";
+	echo "../images/".$row["picture"].".jpg" . "', 'View larger image', 'resizable=yes, toolbar=no, location=no, ";
+	echo "directories=no, menubar=yes, status=no')\"><img src=\"../thumbs/images/";
 	echo $row["picture"].".jpg";
-	$imagesize = getimagesize("images/".$row["picture"].".jpg");
+	$imagesize = getimagesize("../images/".$row["picture"].".jpg");
 	$width = $imagesize[0];
 	$height = $imagesize[1];
 	if($width > $height){
@@ -51,6 +51,9 @@ while($row = mysql_fetch_array($numresults)) {
 
 	if($row['left'] > 0 || $row['s'] > 0 || $row['m'] > 0 || $row['l'] > 0 || $row['xl'] > 0){
 		//items still in stock
+		if($row['left'] > 0){
+			echo "<br><br><A href=\"?page=cart&action=addtocart&item=$item\"><strong>Add to cart</strong></a><br><br>";
+		}
 	} else {
 		$donthaveit = true;
 		if($row['restock'] == "true"){

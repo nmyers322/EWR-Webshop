@@ -190,9 +190,9 @@ if($numrows < 1){
 			echo "</b></font><br>";
 			echo "<a href=\"?page=viewitem&item=";
 			echo $row["id"];
-			echo "&view=". $view ."\"><img src=\"thumbs/images/";
+			echo "&view=". $view ."\"><img src=\"../thumbs/images/";
 			echo $row["picture"];
-			$imagesize = getimagesize("thumbs/images/".$row["picture"].".jpg");
+			$imagesize = getimagesize("../thumbs/images/".$row["picture"].".jpg");
 			$width = $imagesize[0];
 			$height = $imagesize[1];
 			if($width > $height){
